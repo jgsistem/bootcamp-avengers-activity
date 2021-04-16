@@ -33,8 +33,8 @@ public class ApiController {
                 .subscribeOn(Schedulers.io());
     }
 
-    @GetMapping("/allByCategory")
-    public Observable<List<Activity>> getAllActivitiesByCategory(Long idCategory) {
+    @GetMapping("/allByCategory/{idCategory}")
+    public Observable<List<Activity>> getAllActivitiesByCategory(@PathVariable Long idCategory) {
         return apiService.getAllActivitiesByCategory(idCategory)
                 .subscribeOn(Schedulers.io());
     }
